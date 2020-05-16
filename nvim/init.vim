@@ -43,6 +43,7 @@ Plug 'kien/ctrlp.vim'  " fuzzy search files
 Plug 'tweekmonster/impsort.vim'
 Plug 'w0rp/ale'  " python linters
 Plug 'airblade/vim-gitgutter'  " show git changes to files in gutter
+Plug 'tpope/vim-fugitive' " executing git commands from within vim
 Plug 'tpope/vim-commentary'  "comment-out by gc
 Plug 'roxma/nvim-yarp'  " dependency of ncm2
 Plug 'ncm2/ncm2'
@@ -317,3 +318,16 @@ let g:autopep8_on_save = 1 " autopep8 on save
 "setting the airline theme
 " let g:airline_theme='solarized'
 " let g:airline_solarized_bg='light'
+
+"fixing gitgutter issues
+let s:grep_available = 0
+set updatetime=250 "fixing slow gitgutter
+
+"customize key mapping for gitgutter
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+
+"undo git hunks
+nmap <Leader>hu <Plug>(GitGutterUndoHunk)
+nmap <Leader>hv <Plug>(GitGutterPreviewHunk)
+
