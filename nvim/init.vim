@@ -16,7 +16,7 @@ nnoremap <leader>q :q<cr>
 " comma + t to start the terminal
 nnoremap <leader>t :terminal<cr>
 " comma + , to go to the settings file
-nnoremap <leader>, :e c:\users\hazeez\appdata\local\nvim\init.vim<cr>
+nnoremap <leader>, :e c:\users\hafiz\appdata\local\nvim\init.vim<cr>
 " comma tab to bring up the Scratch file
 nnoremap <leader><Tab> :Scratch<cr>
 " comma h for disabling the search highlight
@@ -331,3 +331,19 @@ nmap [h <Plug>(GitGutterPrevHunk)
 nmap <Leader>hu <Plug>(GitGutterUndoHunk)
 nmap <Leader>hv <Plug>(GitGutterPreviewHunk)
 
+" ctrlp settings
+let g:ctrlp_map = '<tab>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" setting ctrlp to set its working directory to the nearest repo dir
+let g:ctrlp_working_path_mode = 'ra'
+
+" setting wild ignore 
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
